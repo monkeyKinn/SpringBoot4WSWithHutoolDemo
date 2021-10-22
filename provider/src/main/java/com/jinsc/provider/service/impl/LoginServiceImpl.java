@@ -2,7 +2,6 @@ package com.jinsc.provider.service.impl;
 
 import com.jinsc.provider.service.LoginService;
 import com.jinsc.provider.vo.UserLoginVO;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import javax.jws.WebParam;
