@@ -23,7 +23,8 @@ import java.util.List;
 public class TestWsConnect {
     public static void main(String[] args) {
         // 新建客户端
-        SoapClient client = SoapClient.create("http://localhost:8080/webservice/loginApi?wsdl")
+        // SoapClient client = SoapClient.create("http://localhost:8080/webservice/loginApi?wsdl")
+        SoapClient client = SoapClient.create("http://1.15.1.193:8080/webservice/loginApi?wsdl")
                 // 设置要请求的方法，此接口方法前缀为web，传入对应的命名空间
                 .setMethod("jin:userLogin", "http://jinsc.com")
                 .setParam("name","jinshengcong3080ti",false);
