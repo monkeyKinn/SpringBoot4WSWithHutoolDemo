@@ -5,7 +5,7 @@ import lombok.Data;
 import java.io.Serializable;
 
 /**
- * TODO description
+ * 用户登录Dto
  *
  * @author 金聖聰
  * @version v1.0
