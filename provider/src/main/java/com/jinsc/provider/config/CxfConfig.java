@@ -40,6 +40,7 @@ public class CxfConfig {
      */
     @Bean
     public ServletRegistrationBean<CXFServlet> dispatcherServlet2() {
+        // 这里就是发布服务的跟路径,后面 * 是通配符,表示跟什么都行
         return new ServletRegistrationBean<>(new CXFServlet(), "/webservice/*");
     }
 
@@ -50,6 +51,8 @@ public class CxfConfig {
 
     @Bean
     public Endpoint endpoint() {
+        // 建立一个端点 ,第一个参数是 springBus 对象,第二个参数是刚才的接口实现类(因为在实现类中用了@service,所以这里可以自动注入)
+        // PS: 要是有多个service,这个方法对象多写几个就行
         EndpointImpl endpoint = new EndpointImpl(springBus(), loginService);
         endpoint.publish("/loginApi");
         return endpoint;
