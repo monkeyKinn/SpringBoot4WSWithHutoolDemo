@@ -2,6 +2,8 @@ package com.jinsc.provider.vo;
 
 import lombok.Data;
 
+import java.io.Serializable;
+
 /**
  * TODO description
  *
@@ -11,13 +13,16 @@ import lombok.Data;
  * @since Created in 2021/10/21 23:28
  */
 @Data
-public class UserLoginVO {
+public class UserLoginVO implements Serializable {
+    private static final long serialVersionUID = 2673128718180426817L;
     private Integer errorCode;
     private String errMsg;
     private String name;
-    public UserLoginVO(){
+
+    public UserLoginVO() {
     }
-    public UserLoginVO(Integer errorCode,String errMsg,String name){
+
+    public UserLoginVO(Integer errorCode, String errMsg, String name) {
         this.errorCode = errorCode;
         this.errMsg = errMsg;
         this.name = name;
