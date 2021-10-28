@@ -74,11 +74,17 @@
 
         <configuration>
           <!--远程docker地址-->
-          <dockerHost>http://1.15.1.193:2375</dockerHost>
+          <dockerHost>https://1.15.1.193:2376</dockerHost>
           <!--镜像名称,前缀/项目名-->
           <imageName>${docker.image.prefix}/${project.artifactId}</imageName>
+          <!-- 指定标签 -->
+          <imageTags>
+            <imageTag>latest</imageTag>
+          </imageTags>
           <!--dockerFile的位置-->
           <dockerDirectory>src/main/docker</dockerDirectory>
+          <!-- 指定tls证书的目录 -->
+          <dockerCertPath>E:\dockerPass</dockerCertPath>
           <resources>
             <resource>
               <targetPath>/</targetPath>
