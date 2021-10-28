@@ -23,12 +23,14 @@ import java.util.List;
 public class TestWsConnect {
     public static void main(String[] args) {
         // 新建客户端
-        // SoapClient client = SoapClient.create("http://localhost:8080/webservice/loginApi?wsdl")
-        SoapClient client = SoapClient.create("http://1.15.1.193:8080/webservice/loginApi?wsdl")
+        SoapClient client = SoapClient.create("http://localhost:8080/webservice/loginApi?wsdl")
+                // SoapClient client = SoapClient.create("http://服务器端口地址/webservice/loginApi?wsdl")
                 // 设置要请求的方法，此接口方法前缀为web，传入对应的命名空间
                 .setMethod("jin:userLogin", "http://jinsc.com")
+                // 设置参数，此处自动添加方法的前缀：jin
+                // false的意思就是没有前缀
                 .setParam("name", "jinshengcong3080ti", false);
-        // 设置参数，此处自动添加方法的前缀：web
+
 
         // 发送请求，参数true表示返回一个格式化后的XML内容
         // 返回内容为XML字符串，可以配合XmlUtil解析这个响应
